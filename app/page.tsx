@@ -23,15 +23,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>AWS Icons</h1>
-      <Input onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-        let search = event.target.value;
-        setSearchedIcon(search);
-        console.log(search);
-      }}/>
-      <Button onClick={() => (getIcons())}>Search</Button>
-      <AWSIconsCardList icons={icons.filter((i) => (i.toLowerCase().includes(searchedIcon)))}/>
+    <div className="py-6 px-8 flex flex-col items-center gap-y-4">
+      <h1 className="font-bold text-5xl" >AWS Icons</h1>
+      <div className="flex gap-2 w-full">
+        <Input onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          let search = event.target.value;
+          setSearchedIcon(search);
+          console.log(search);
+        }} />
+        <Button onClick={() => (getIcons())}>Search</Button>
+      </div>
+      <AWSIconsCardList className="w-full" icons={icons.filter((i) => (i.toLowerCase().includes(searchedIcon)))} />
     </div>
   );
 }

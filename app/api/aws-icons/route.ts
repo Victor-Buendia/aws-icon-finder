@@ -1,9 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: Request) {
-    // STEP 1: Fetch the AWS icons in an array
+export async function GET(request: NextRequest) {
     const currentPath = process.cwd();
     const iconsPath = path.join(currentPath, "public/assets");
     const blobs = fs.readdirSync(iconsPath, { recursive: true })
@@ -22,5 +21,4 @@ export async function GET(request: Request) {
         },
         { status: 200 }
     );
-    // STEP 2: Return the array as a JSON response
 }
