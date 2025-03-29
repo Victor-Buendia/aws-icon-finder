@@ -29,6 +29,25 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on GitHub Pages
+
+This project is configured for deployment on GitHub Pages using GitHub Actions:
+
+1. Push your changes to the `main` branch
+2. Go to your repository's Settings > Pages
+3. Under "Build and deployment":
+   - Source: Select "GitHub Actions"
+   - Wait for the workflow to complete
+
+The site will be available at: `https://[username].github.io/aws-icon-finder`
+
+### Manual Deployment
+
+```bash
+npm run build
+# The static files will be generated in the 'out' directory
+```
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
